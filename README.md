@@ -1,6 +1,6 @@
-# mkdocs_plantuml_markdown
+# MkDocs PlantUML plugin
 
-[MkDocs](https://www.mkdocs.org/) plugin to support inline plantuml in markdown pages
+[MkDocs](https://www.mkdocs.org/) plugin to support inline [PlantUML](https://plantuml.com/) in markdown pages
 
 For a plugin that generates diagrams from puml files see also:
 [mkdocs_build_plantuml](https://github.com/christo-ph/mkdocs_build_plantuml)
@@ -25,7 +25,7 @@ The plugin will call a local plantuml server (or the global plantuml server if c
 
 The @startuml / @enduml is optional here.
 
-Great plugins that supports this format as well are [vscode-plantuml](https://github.com/qjebbs/vscode-plantuml/) in conjunction with [vscode-markdown-extended](https://github.com/qjebbs/vscode-markdown-extended).
+Great visual studio code plugins that support this format as well are [vscode-plantuml](https://github.com/qjebbs/vscode-plantuml/) in conjunction with [vscode-markdown-extended](https://github.com/qjebbs/vscode-markdown-extended).
 
 My own PlantUML server [pumlsrv](https://github.com/michael72/pumlsrv) will render the SVG images from plantuml very quickly.
 

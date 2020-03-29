@@ -22,3 +22,12 @@ The plugin will call a local plantuml server (or the global plantuml server if c
 <pre>
 ![Hello world](./md_name_1.svg)
 </pre>
+
+The @startuml / @enduml is optional here.
+
+Great plugins that supports this format as well are [vscode-plantuml](https://github.com/qjebbs/vscode-plantuml/) in conjunction with [vscode-markdown-extended](https://github.com/qjebbs/vscode-markdown-extended).
+
+My own PlantUML server [pumlsrv](https://github.com/michael72/pumlsrv) will render the SVG images from plantuml very quickly.
+
+Have fun!
+

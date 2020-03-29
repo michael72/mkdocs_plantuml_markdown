@@ -86,11 +86,11 @@ class PlantUmlMarkdown(BasePlugin):
             first_line = uml[:uml.find("\n")+1].strip()
             title = first_line[:first_line.find(" ")+1].strip()
             if len(title) > len(startuml):
-                return first_line[len(startuml)+1:].strip()
+                return title[len(startuml)+1:].strip()
         idx = uml.find('title')
-        if idx == 0 or idx > 1 and uml[idx - 1] == '\n':
-            return uml[idx: uml.find('\n')].strip()
-        return out_file.stem
+        if idx == 0 or (idx > 1 and uml[idx - 1] == '\n'):
+            return uml[idx + 6: uml.find('\n', idx)].strip()
+        return out_file.stem.replace("_", " ")
     
     def _write_outfile(self, uml: str, out_file: Path):
         """ Creates the diagram output file given the UML content and the output file name."""
@@ -121,7 +121,7 @@ class PlantUmlMarkdown(BasePlugin):
             else:
                 log.error("Got %s response %d for '%s'", response.reason, response.status, url)
         except:
-            log.error("Server error while processing '%s'", url)
+            log.error("Server error while processing '%s' - is the server running and accessible with proxy?", url)
         return result
         
     def _zip_diagram(self, uml: str) -> str:
